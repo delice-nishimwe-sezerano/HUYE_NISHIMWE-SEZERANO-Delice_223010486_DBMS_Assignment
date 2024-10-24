@@ -1,0 +1,367 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> USE TABLE NGOMA;
+ERROR 1049 (42000): Unknown database 'table'
+mysql> CREATE TABLE NGOMA;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> CREATE TABLE NGOMA(ID INT(10),F_NAME CHAR(15),L_NAME CHAR(15),GENDER CHAR(12),PROVINCE CHAR(15),DISTRICT CHAR(15),SECTOR CHAR(
+20),CELL CHAR(20),EMAIL_ADDRESS VARCHAR(25),TEL_NO CHAR(13));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> INSERT INTO NGOMA VALUES('001','David','MUFASHA','MALE','KIGALI CITY','KICUKIRO','GIKONDO','KAGUNGA','davidmufasha@gmail.com','0782301568');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+--------+---------+--------+-------------+----------+---------+---------+------------------------+------------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE    | DISTRICT | SECTOR  | CELL    | EMAIL_ADDRESS          | TEL_NO     |
++------+--------+---------+--------+-------------+----------+---------+---------+------------------------+------------+
+|    1 | David  | MUFASHA | MALE   | KIGALI CITY | KICUKIRO | GIKONDO | KAGUNGA | davidmufasha@gmail.com | 0782301568 |
++------+--------+---------+--------+-------------+----------+---------+---------+------------------------+------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('002','Delice','NISHIMWE SEZERANO','FEMALE','NORTHERN','MUSANZE','MUSANZE','CYABAGARURA','n.delice200
+4@gmail.com','0791469437');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+--------+-----------------+--------+-------------+----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME | L_NAME          | GENDER | PROVINCE    | DISTRICT | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+--------+-----------------+--------+-------------+----------+---------+-------------+------------------------+------------+
+|    1 | David  | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE  | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
++------+--------+-----------------+--------+-------------+----------+---------+-------------+------------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('003','Onesphore','TWIZEYIMANA','MALE','KIGALI CITY','GASABO','GISOZI','RUHANGO',om
+    -> INSERT INTO NGOMA VALUES('002','Delice','NISHIMWE SEZERANO','FEMALE','NORTHERN','MUSANZE','MUSANZE','CYABAGARURA','n.delice2004@gmail.com','0791469437');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO NGOMA VALUES('002','Delice','NISHIMWE SEZERANO','FEMALE','NORTHERN',' at line 2
+mysql> INSERT INTO NGOMA VALUES('003','Onesphore','TWIZEYIMANA','MALE','KIGALI CITY','GASABO','GASABO','RUHANGO','onesphore@gmail.com
+','0791469400');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+-----------+-----------------+--------+-------------+----------+---------+-------------+------------------------+------------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE  | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO   | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 |
++------+-----------+-----------------+--------+-------------+----------+---------+-------------+------------------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('004','Lea','MUKAMA','FEMALE','SOUTHERN','NYAMAGABE','GASAKA','NYAMUGARI','mukama@gmail.com','0791469
+500');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('004','Destin','ISHIMWE','MALE','NOTHERN','MUSANZE','MUSANZE','GASHANGIRO','destin@gmail.com','079146
+9510');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('005','Destin','ISHIMWE','MALE','NOTHERN','MUSANZE','MUSANZE','GASHANGIRO','destin@gmail.com','079146
+9510');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
+|    5 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('005','Destin','ISHIMWE','MALE','NOTHERN','MUSANZE','MUSANZE','GASHANGIRO','destin@gmail.com','0791469510');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('006','Destin','IRANGI','FEMALE','NOTHERN','MUSANZE','MUSANZE','BUKANE','sine@gmail.com','0791469510'
+);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO NGOMA VALUES('007','Fisto','IRANZI','MALE','NOTHERN','MUSANZE','MUSANZE','RWAMBOGO','sano@gmail.com','0791469510')
+;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('008','Kellen','MPANO','FEMALE','KIGALI CITY','GASABO','MASAKA','KABUGA','mpano@gmail.com','078146951
+0');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
+|    5 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
+|    5 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE SET L_NAME='NAMARA' WHERE ID='5';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SET L_NAME='NAMARA' WHERE ID='5'' at line 1
+mysql> UPDATE NGOMA SET L_NAME='NAMARA' WHERE ID='5';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> UPDATE NGOMA SET F_NAME='JOlly' WHERE ID='5';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> UPDATE NGOMA SET EMAIL_ADDRESS='jolly@gmail.com' WHERE ID='5';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET F_NAME='Peninah' WHERE ID='9';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER NGOMA ADD STATUS CHAR(15);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NGOMA ADD STATUS CHAR(15)' at line 1
+mysql> ALTER TABLE NGOMA ADD STATUS CHAR(15);
+Query OK, 10 rows affected (0.06 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+--------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     | STATUS |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+--------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 | NULL   |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 | NULL   |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 | NULL   |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 | NULL   |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 | NULL   |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | NULL   |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | NULL   |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 | NULL   |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 | NULL   |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 | NULL   |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='1';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='2';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+---------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     | STATUS  |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+---------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 | MARRIED |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 | SINGLE  |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 | NULL    |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 | NULL    |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 | NULL    |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | NULL    |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | NULL    |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 | NULL    |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 | NULL    |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 | NULL    |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='3';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='4';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SEPERATED' WHERE ID='5';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='6';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='7';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     | STATUS    |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 | MARRIED   |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 | SINGLE    |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 | SINGLE    |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 | MARRIED   |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 | MARRIED   |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 | SINGLE    |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 | MARRIED   |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 | NULL      |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='8';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+| ID   | F_NAME    | L_NAME          | GENDER | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     | STATUS    |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+|    1 | David     | MUFASHA         | MALE   | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 | MARRIED   |
+|    2 | Delice    | NISHIMWE SEZERA | FEMALE | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 | SINGLE    |
+|    3 | Onesphore | TWIZEYIMANA     | MALE   | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 | SINGLE    |
+|    4 | Lea       | MUKAMA          | FEMALE | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 | MARRIED   |
+|    4 | Destin    | ISHIMWE         | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 | MARRIED   |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    5 | JOlly     | NAMARA          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    6 | Destin    | IRANGI          | FEMALE | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 | SINGLE    |
+|    7 | Fisto     | IRANZI          | MALE   | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 | MARRIED   |
+|    8 | Kellen    | MPANO           | FEMALE | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 | MARRIED   |
++------+-----------+-----------------+--------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,GENGER,STATUS;
+ERROR 1054 (42S22): Unknown column 'ID' in 'field list'
+mysql> SELECT ID,F_NAME,GENDER,STATUS FROM NGOMA;
++------+-----------+--------+-----------+
+| ID   | F_NAME    | GENDER | STATUS    |
++------+-----------+--------+-----------+
+|    1 | David     | MALE   | MARRIED   |
+|    2 | Delice    | FEMALE | SINGLE    |
+|    3 | Onesphore | MALE   | SINGLE    |
+|    4 | Lea       | FEMALE | MARRIED   |
+|    4 | Destin    | MALE   | MARRIED   |
+|    5 | JOlly     | MALE   | SEPERATED |
+|    5 | JOlly     | MALE   | SEPERATED |
+|    6 | Destin    | FEMALE | SINGLE    |
+|    7 | Fisto     | MALE   | MARRIED   |
+|    8 | Kellen    | FEMALE | MARRIED   |
++------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA WHERE ID='1' AND STATUS='MARRIED';
++------+--------+---------+--------+-------------+----------+---------+---------+------------------------+------------+---------+
+| ID   | F_NAME | L_NAME  | GENDER | PROVINCE    | DISTRICT | SECTOR  | CELL    | EMAIL_ADDRESS          | TEL_NO     | STATUS  |
++------+--------+---------+--------+-------------+----------+---------+---------+------------------------+------------+---------+
+|    1 | David  | MUFASHA | MALE   | KIGALI CITY | KICUKIRO | GIKONDO | KAGUNGA | davidmufasha@gmail.com | 0782301568 | MARRIED |
++------+--------+---------+--------+-------------+----------+---------+---------+------------------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA WHERE ID='8' OR F_NAME='Kellen';
++------+--------+--------+--------+-------------+----------+--------+--------+-----------------+------------+---------+
+| ID   | F_NAME | L_NAME | GENDER | PROVINCE    | DISTRICT | SECTOR | CELL   | EMAIL_ADDRESS   | TEL_NO     | STATUS  |
++------+--------+--------+--------+-------------+----------+--------+--------+-----------------+------------+---------+
+|    8 | Kellen | MPANO  | FEMALE | KIGALI CITY | GASABO   | MASAKA | KABUGA | mpano@gmail.com | 0781469510 | MARRIED |
++------+--------+--------+--------+-------------+----------+--------+--------+-----------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP GENDER;
+Query OK, 10 rows affected (0.03 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+| ID   | F_NAME    | L_NAME          | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     | STATUS    |
++------+-----------+-----------------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+|    1 | David     | MUFASHA         | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 | MARRIED   |
+|    2 | Delice    | NISHIMWE SEZERA | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 | SINGLE    |
+|    3 | Onesphore | TWIZEYIMANA     | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 | SINGLE    |
+|    4 | Lea       | MUKAMA          | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 | MARRIED   |
+|    4 | Destin    | ISHIMWE         | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 | MARRIED   |
+|    5 | JOlly     | NAMARA          | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    5 | JOlly     | NAMARA          | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    6 | Destin    | IRANGI          | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 | SINGLE    |
+|    7 | Fisto     | IRANZI          | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 | MARRIED   |
+|    8 | Kellen    | MPANO           | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 | MARRIED   |
++------+-----------+-----------------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+-----------+-----------------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+| ID   | F_NAME    | L_NAME          | PROVINCE    | DISTRICT  | SECTOR  | CELL        | EMAIL_ADDRESS          | TEL_NO     | STATUS    |
++------+-----------+-----------------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+|    1 | David     | MUFASHA         | KIGALI CITY | KICUKIRO  | GIKONDO | KAGUNGA     | davidmufasha@gmail.com | 0782301568 | MARRIED   |
+|    2 | Delice    | NISHIMWE SEZERA | NORTHERN    | MUSANZE   | MUSANZE | CYABAGARURA | n.delice2004@gmail.com | 0791469437 | SINGLE    |
+|    3 | Onesphore | TWIZEYIMANA     | KIGALI CITY | GASABO    | GASABO  | RUHANGO     | onesphore@gmail.com    | 0791469400 | SINGLE    |
+|    4 | Lea       | MUKAMA          | SOUTHERN    | NYAMAGABE | GASAKA  | NYAMUGARI   | mukama@gmail.com       | 0791469500 | MARRIED   |
+|    4 | Destin    | ISHIMWE         | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | destin@gmail.com       | 0791469510 | MARRIED   |
+|    5 | JOlly     | NAMARA          | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    5 | JOlly     | NAMARA          | NOTHERN     | MUSANZE   | MUSANZE | GASHANGIRO  | jolly@gmail.com        | 0791469510 | SEPERATED |
+|    6 | Destin    | IRANGI          | NOTHERN     | MUSANZE   | MUSANZE | BUKANE      | sine@gmail.com         | 0791469510 | SINGLE    |
+|    7 | Fisto     | IRANZI          | NOTHERN     | MUSANZE   | MUSANZE | RWAMBOGO    | sano@gmail.com         | 0791469510 | MARRIED   |
+|    8 | Kellen    | MPANO           | KIGALI CITY | GASABO    | MASAKA  | KABUGA      | mpano@gmail.com        | 0781469510 | MARRIED   |
++------+-----------+-----------------+-------------+-----------+---------+-------------+------------------------+------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT*^AFROM NGOMA;
